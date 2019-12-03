@@ -8,7 +8,7 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 gem "activerecord", ">= 4.2.7.1", :require => 'active_record'
 gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 gem 'sinatra'
-gem 'sqlite3', '~>1.3.6'
+gem 'sqlite3', '~>1.4'
 gem 'rake'
 gem 'pry'
 gem 'shotgun'
