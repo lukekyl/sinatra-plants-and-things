@@ -5,7 +5,7 @@ source "https://rubygems.org"
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 # gem "rails"
-gem 'activerecord', '4.2.5', :require => 'active_record'
+gem "activerecord", ">= 4.2.7.1", :require => 'active_record'
 gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 gem 'sinatra'
 gem 'sqlite3', '~>1.3.6'
