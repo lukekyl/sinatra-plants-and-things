@@ -5,12 +5,12 @@ source "https://rubygems.org"
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 # gem "rails"
+gem 'activerecord', '4.2.5', :require => 'active_record'
+gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 gem 'sinatra'
-gem 'sqlite3'
-gem 'activerecord', :require => "active_record"
+gem 'sqlite3', '~>1.3.6'
 gem 'rake'
 gem 'pry'
-gem 'sinatra-activerecord'
 gem 'shotgun'
 gem 'bcrypt', '~> 3.1.7'
 gem 'require_all'
