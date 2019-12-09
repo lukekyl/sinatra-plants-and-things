@@ -1,22 +1,35 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
-# Note that this schema.rb definition is the authoritative source for your
-# database schema. If you need to create the application database on another
-# system, you should be using db:schema:load, not running all the migrations
-# from scratch. The latter is a flawed and unsustainable approach (the more migrations
-# you'll amass, the slower it'll run and the greater likelihood for issues).
+# This file is the source Rails uses to define your schema when running `rails
+# db:schema:load`. When creating a new database, `rails db:schema:load` tends to
+# be faster and is potentially less error prone than running all of your
+# migrations from scratch. Old migrations may fail to apply correctly if those
+# migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191203035743) do
+ActiveRecord::Schema.define(version: 2019_12_05_043911) do
 
-  create_table "users", force: :cascade do |t|
+  create_table "comments", force: :cascade do |t|
+    t.string "owner_id"
+    t.string "plant_id"
+    t.string "reply"
+  end
+
+  create_table "owners", force: :cascade do |t|
     t.string "email"
     t.string "name"
     t.string "password_digest"
+  end
+
+  create_table "plants", force: :cascade do |t|
+    t.string "name"
+    t.string "family"
+    t.string "description"
+    t.string "care"
+    t.integer "owner_id"
   end
 
 end

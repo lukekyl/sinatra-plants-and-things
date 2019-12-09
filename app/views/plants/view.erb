@@ -1,0 +1,41 @@
+
+    <a href="/account" id="list">Back to Plant Collection</a>
+    <hr>
+    <div class="row" style="margin-top:40px;">
+    <div class="col-md-4">
+    <h2>Plant Name:</h2>
+    <h1><%=@plant.name%></h1>
+    </div>
+    <div class="col-md-6">
+    <p><strong>Type: </strong><%=@plant.family%></p>
+    <p><strong>Description: </strong><%=@plant.description%></p>
+    <p><strong>Care: </strong><%=@plant.care%></p>
+    </div>
+    <div class="col-md-2">
+    <a href="/plants/<%=@plant.id%>/edit" id="edit">Edit Plant</a>
+    </div>
+    </div>
+    
+    <hr style="margin-top:40px;">
+    <div class="row" style="margin-top:40px;">
+    <div class="col-md-12">
+    <%if @comments%>
+    <div class="comments">
+    <h6>Comments:</h6>
+    <ol>
+        <%@comments.each do |c|%>
+        <li>
+            <p><%owner = Owner.find(c.owner_id)%><span><%= owner.name%>:</span> "<%=c.reply%>"</p>
+        </li>
+        <%end%>
+    </ol>
+    </div>
+    <%else%>
+    <p>No Comments</p>
+    <%end%>
+    <a href="/plants/<%=@plant.id%>/new_comment" id="comment">Add New Comment</a>
+    </div>
+    </div>
+
+
+    

@@ -7,4 +7,7 @@ if ActiveRecord::Base.connection.migration_context.needs_migration?
 end
 
 use SessionsController
+use OwnersController
+use PlantsController
+use CommentsController
 run ApplicationController
