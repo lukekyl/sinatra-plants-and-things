@@ -11,7 +11,7 @@
     <ul>
         <%@plants.each do |p|%>
         <li>
-            <a href="/plants/<%=p.id%>"><%=p.name%></a>
+            <a href="/plants/<%=p.id%>"><%=p.name%></a> <a href="/plants/<%=p.id%>/remove_owner" class="delete commentcontrol">Remove</a>
         </li>
         <%end%>
     </ul>
@@ -20,7 +20,7 @@
     <%end%>
     </div>
     <div class="col-md-4">
-    <p><a href="/plants/new">Add Plant to Collection</a></p>
+    <p><a href="/plants">+ Add Plant to Collection</a></p>
     </div>
     </div>
     <hr style="margin-top:40px;">

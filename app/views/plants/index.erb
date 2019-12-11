@@ -1,13 +1,29 @@
-
+    <a href="/account" id="list">Back to Your Collection</a>
+    <hr>
+    <div class="row" style="margin-top:40px;">
+    <div class="col-md-8">
+    <h1>All Plants In Database</h1>
+    
     <ul>
         <%@plants.each do |p|%>
         <li>
-            <a href="/plants/<%=p.id%>"><%=p.name%></a>
+            <form method="POST" action="/plants/<%=p.id%>/add_owner">
+            <input type="checkbox" id="toggle" class="checkbox" onChange="this.form.submit()"/>
+            <label for="toggle" class="switch"></label><a href="/plants/<%=p.id%>" class="add_plant"><%=p.name%></a>
+            </form>
         </li>
         <%end%>
     </ul>
+    
+    </div>
+    <div class="col-md-4">
 
-    <br>
-    <h3>Can't find your plant in the list?</h3>
-    <br>
-    <a href="/plants/new"><button>Add New Plant</button></a>
+    </div>
+    </div>
+    <hr>
+    <div class="row" style="margin-top:40px;">
+    <div class="col-md-12">
+    <h4>Can't find your plant in the list?</h4>
+    <a href="/plants/new"><button class="submit">Add Plant</button></a>
+    </div>
+    </div>

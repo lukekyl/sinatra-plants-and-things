@@ -1,5 +1,14 @@
 
-    <a href="/account" id="list">Back to Plant Collection</a>
+    <div class="row">
+    <div class="col-md-4">
+    <a href="/account" id="list">Back to Your Collection</a>
+    </div>
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-2">
+    <a href="/plants/<%=@plant.id%>/delete" class="delete">Delete Plant</a>
+    </div>
+    </div>
     <hr>
     <div class="row" style="margin-top:40px;">
     <div class="col-md-4">
@@ -25,7 +34,12 @@
     <ol>
         <%@comments.each do |c|%>
         <li>
-            <p><%owner = Owner.find(c.owner_id)%><span><%= owner.name%>:</span> "<%=c.reply%>"</p>
+            <p><%owner = Owner.find(c.owner_id)%><span><%= owner.name%>:</span> "<%=c.reply%>"
+            <%if owner.id == @owner.id%>
+            <a href="/plants/<%=@plant.id%>/comment/<%=c.id%>/edit" id="edit" class="commentcontrol">Edit</a>
+            <a href="/plants/<%=@plant.id%>/comment/<%=c.id%>/delete" class="delete commentcontrol">Delete</a>
+            <%end%>
+            </p>
         </li>
         <%end%>
     </ol>
@@ -33,7 +47,7 @@
     <%else%>
     <p>No Comments</p>
     <%end%>
-    <a href="/plants/<%=@plant.id%>/new_comment" id="comment">Add New Comment</a>
+    <a href="/plants/<%=@plant.id%>/comment" id="comment">Add New Comment</a>
     </div>
     </div>
 

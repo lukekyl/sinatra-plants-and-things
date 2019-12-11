@@ -1,9 +1,9 @@
 class PlantsController < ApplicationController
 
-    # get '/plants' do
-    #     @plants = Plant.all
-    #     erb :"plants/index"
-    # end
+    get '/plants' do
+        @plants = Plant.all
+        erb :"plants/index"
+    end
 
     get '/plants/new' do 
         erb :"plants/new"
@@ -13,15 +13,30 @@ class PlantsController < ApplicationController
         @plant = Plant.create(name: params[:plant][:name])
         @plant.update(params[:plant])
         @owner = current_owner
-        @plant.owner_id = @owner.id
-        @plant.save
+        @ownerplant = OwnerPlant.create(plant_id: @plant.id, owner_id: @owner.id)
         redirect "/plants/#{@plant.id}"
+    end
+
+    post '/plants/:id/add_owner' do
+        @plant = Plant.find(params[:id])
+        @owner = current_owner
+        @ownerplant = OwnerPlant.create(plant_id: @plant.id, owner_id: @owner.id)
+        redirect '/account'
+    end
+
+    get '/plants/:id/remove_owner' do
+        @plant = Plant.find(params[:id])
+        @owner = current_owner
+        @ownerplant = OwnerPlant.find_by(plant_id: @plant.id, owner_id: @owner.id)
+        @ownerplant.delete 
+        redirect '/account'
     end
 
     get '/plants/:id' do 
         @plant = Plant.find(params[:id])
         @owner = current_owner
-        @comments = Comment.all
+        #@comments = Comment.all
+        @comments = @plant.comments
         erb :"plants/view"
     end
 
@@ -35,6 +50,14 @@ class PlantsController < ApplicationController
         @plant.update(params[:plant])
         @plant.save
         redirect "/plants/#{@plant.id}"
+    end
+
+    get '/plants/:id/delete' do 
+        @plant = Plant.find(params[:id])
+        @op = OwnerPlant.find_by(plant_id: @plant.id)
+        @op.delete
+        @plant.delete
+        redirect "/plants"
     end
 
 end

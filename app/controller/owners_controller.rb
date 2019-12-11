@@ -16,8 +16,7 @@ class OwnersController < ApplicationController
 
     get '/account' do
         @owner = current_owner
-        @plants = Plant.all
-        #@plants = Plant.find_by(@owner.id)
+        @plants = @owner.plants
         erb :"owners/index"
     end
 

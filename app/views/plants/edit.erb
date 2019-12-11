@@ -3,16 +3,16 @@
     <form method="POST" action="/plants/<%=@plant.id%>">
     <input type="hidden" name="_method" value="patch">
         <label for="plant_name">Name: </label>
-        <input type="text" name="plant[name]" id="plant_name" placeholder="<%=@plant.name%>">
+        <input type="text" name="plant[name]" id="plant_name" value="<%=@plant.name%>">
         <br>
         <label for="plant_type">Family: </label>
-        <input type="text" name="plant[family]" id="plant_family" placeholder="<%=@plant.family%>">
+        <input type="text" name="plant[family]" id="plant_family" value="<%=@plant.family%>">
         <br>
         <label for="plant_description">Description: </label>
-        <input type="text" name="plant[description]" id="plant_description" placeholder="<%=@plant.description%>">
+        <input type="text" name="plant[description]" id="plant_description" value="<%=@plant.description%>">
         <br>
         <label for="plant_care">Care: </label>
-        <input type="text" name="plant[care]" id="plant_care" placeholder="<%=@plant.care%>">
+        <input type="text" name="plant[care]" id="plant_care" value="<%=@plant.care%>">
         <br>
         <input class="submit" type="submit" value="Update">
     </form>
