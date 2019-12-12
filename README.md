@@ -1,27 +1,27 @@
 Sinatra CMS Final
-Welcome to the XXX!
+Welcome to Plants & Things!
 
-Short Description
+An app to catalog and track your plant collection with notes of type, description and care.
 
-To run the gem, you will first have to move into the correct directory (skireport): type "cd sinatra-cms-final"
 
-To install the gem bundle: type "bundle install"
-
-To then run the program: type "shotgun"
-
-Follow the prompt to enter the remote server and enjoy!
 
 Installation
 For use in a Browser:
 
-To run the gem, you will first have to move into the correct directory (skireport): type "cd sinatra-cms-final"
+To run the gem, you will first have to cd into the app directory: type "cd sinatra-cms-final"
 
 To install the gem bundle: type "bundle install"
 
-Usage
-To then run the program: type "shotgun"
+To initialize the database: type "rake db:migrate"
 
-Follow the prompt to enter the remote server and enjoy!
+To start a local server to run the application in a browser: type "shotgun"
+
+Finally, option click on the server number in the console: example "http://127.0.0.1:9393/" 
+
+Usage
+Follow the in-browser prompts to create or log into an account. Then play around, adding, selecting, updating, and removing plants to your own plant collection. Add, edit or remove comments on your plants and others! Enjoy the app, and happy plant collecting!
+
+Note. To end the local session, back in your terminal you can close "shotgun" by typing: command + C
 
 Development
 After checking out the repo, run bin/setup to install dependencies. Then, run rake spec to run the tests. You can also run bin/console for an interactive prompt that will allow you to experiment.
@@ -37,4 +37,4 @@ License
 The gem is available as open source under the terms of the MIT License.
 
 Code of Conduct
-Everyone interacting in the Skireport project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
+Everyone interacting in the Plants & Things project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.

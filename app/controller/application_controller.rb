@@ -30,6 +30,9 @@ class ApplicationController < Sinatra::Base
         def current_owner
             Owner.find(session[:owner_id])
         end
+        def current_plant
+            Plant.find(params[:id])
+        end
     end
 
     private

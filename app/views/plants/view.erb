@@ -6,7 +6,9 @@
     <div class="col-md-6">
     </div>
     <div class="col-md-2">
+    <%if @plant.creator_id == @owner.id%>
     <a href="/plants/<%=@plant.id%>/delete" class="delete">Delete Plant</a>
+    <%end%>
     </div>
     </div>
     <hr>
@@ -14,6 +16,11 @@
     <div class="col-md-4">
     <h2>Plant Name:</h2>
     <h1><%=@plant.name%></h1>
+    <%if !@owner.plants.include? @plant%>
+        <form method="POST" action="/plants/<%=@plant.id%>/add_owner">
+        <input type="submit" id="submit" class="submit" value="Add This Plant"/>
+        </form>
+    <%end%>
     </div>
     <div class="col-md-6">
     <p><strong>Type: </strong><%=@plant.family%></p>
@@ -25,7 +32,7 @@
     </div>
     </div>
     
-    <hr style="margin-top:40px;">
+    <hr style="margin-top:20px;">
     <div class="row" style="margin-top:40px;">
     <div class="col-md-12">
     <%if @comments%>

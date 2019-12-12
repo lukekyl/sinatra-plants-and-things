@@ -5,6 +5,7 @@ class CreatePlants < ActiveRecord::Migration[6.0]
       t.string :family
       t.string :description
       t.string :care
+      t.integer :creator_id
     end
   end
 end

@@ -3,7 +3,7 @@
     <div class="row" style="margin-top:40px;">
     <div class="col-md-8">
     <h1>All Plants In Database</h1>
-    
+    <%if @plants%>
     <ul>
         <%@plants.each do |p|%>
         <li>
@@ -14,7 +14,9 @@
         </li>
         <%end%>
     </ul>
-    
+    <%else%>
+    <p>Oh No! There are no plants added to the database yet!</p>
+    <%end%>
     </div>
     <div class="col-md-4">
 
