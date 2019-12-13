@@ -28,9 +28,6 @@ class OwnersController < ApplicationController
     patch '/account/:id' do
         @owner = current_owner
         @owner.update(name: params[:name])
-        # if params[:password] && params[:password] != @owner.password
-        #     @owner.update(password: params[:password]) 
-        # end
         @owner.save
         redirect '/account'
       end

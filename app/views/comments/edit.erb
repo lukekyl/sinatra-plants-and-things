@@ -1,7 +1,11 @@
 <h1>Edit Comment for <%=@plant.name%></h1>
-<br>
+<hr>
+<div class="row" style="margin-top:40px;">
+<div class="col-md-12">
 <form method="POST" action="/plants/<%=@plant.id%>/comment/<%=@comment.id%>/edit">
 <input type="hidden" name="_method" value="patch">
 <p><label for="reply">Comment: </label><input type="text" name="comment[reply]" id="reply" value="<%=@comment.reply%>"></p>
 <input class="submit" type="submit" value="Update">
 </form>
+</div>
+</div>

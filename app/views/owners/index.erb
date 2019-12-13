@@ -3,11 +3,8 @@
     <hr>
     <div class="row" style="margin-top:40px;">
     <div class="col-md-8">
-    <% if @errors %>
-        <h3><%=@errors%></h3>
-    <% end %>
     <h2>Your Plant Collection:</h2>
-    <%if @plants%>
+    <%if @plants != []%>
     <ul>
         <%@plants.each do |p|%>
         <li>
@@ -16,7 +13,7 @@
         <%end%>
     </ul>
     <%else%>
-    <p>Oh No! You have dont have any plants in your collection yet!</p>
+    <h6>Oh No! You have dont have any plants in your collection yet!</h6>
     <%end%>
     </div>
     <div class="col-md-4">
